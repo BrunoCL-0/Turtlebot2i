@@ -1,0 +1,38 @@
+                                *Executaveis aplicaveis ao turtlebot e explicação deles*
+
+//ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:=commands/velocity
+*Conecta o turtlebot ao teclado onde pode realizar suas movimentações como:
+.Andar pra frente(i)
+.Girar pra direita(j)
+.Girar pra esquerda(l)
+.Arco pra direita(o)
+.Arco pra esquerda(u)
+.Andar pra tras(,)
+.Arco pra tras esquerda(m)
+.Arco pra tras direita(.)
+
+// ros2 launch teleop_twist_joy teleop-launch.py config_filepath:='/home/brunocunhalima/pdp.config.yaml' joy_vel:='commands/velocity'
+*Conecta o joystick no turtlebot para movimenta-lo. Obs: Deve conectar pelo terminal do qual o computador esteja conectado ao controle // Obs2: o pdp.config.yaml foi salvo no locao sinalizado "/home/brunocunhalima/", podendeo assim variar a situação
+.Codigo dentro do .yaml:
+
+teleop_twist_joy_node:
+  ros__parameters:
+    axis_linear:  # Left thumb stick vertical
+      x: 1
+    scale_linear:
+      x: 0.2
+    scale_linear_turbo:
+      x: 1.5
+
+    axis_angular:  # Left thumb stick horizontal
+      yaw: 0
+    scale_angular:
+      yaw: 0.4
+
+    enable_button: 4  # Left 'LB' button
+    enable_turbo_button: 5  # Right 'RB' button
+
+.Aperta LB e move o robo
+
+
+
