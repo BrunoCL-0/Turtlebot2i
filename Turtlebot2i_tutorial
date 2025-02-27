@@ -1,0 +1,6 @@
+                                                    *PASSO A PASSO TURTLEBOT2I*
+
+1- Baixe o ros2 no seu sistema e as pastas presentes no https://idorobotics.com/2024/02/20/ros2-on-kobuki-turtlebot/ 
+2- Entre no terminal do seu computador e conecte ao id do turtlebot com ssh usuario@id, em nosso caso ssh turtlebot@192.168.42.249 (obs: ambos os consoles devem estar conectados na mesma rede)
+3- Inicie o kobuki com ros2 launch kobuki_node kobuki_node-launch.py
+4- Abra outro terminal com turtlebot e execute o comando que preferir, aqui voce começa a mexer no robo, lembre de manter o terminal do kobuki em funcionamento 
