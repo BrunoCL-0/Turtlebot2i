@@ -34,5 +34,10 @@ teleop_twist_joy_node:
 
 .Aperta LB e move o robo
 
+// ros2 launch cmd_vel_mux cmd_vel_mux-launch.py 
+*Pelo oq entendi o codigo define prioridades de conexão, ou seja, o codigo eh mum conjunto de ifs e elses nos quais por exemplo ao conectar um joystick ele vai definir ele como prioridade de saida,
+ou, um teclado e assim por diante, podendo veriar a prioridade em tempo real
+*Fiquei com varias duvidas nisso aq, duvida do codigo em si e do launch pra q serve o outro ? e o yaml entra como nisso? e como eu rodei os outros codigos aquele dia sem usar esse?
+
 
 
