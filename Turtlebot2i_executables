@@ -40,9 +40,10 @@ ou, um teclado e assim por diante, podendo veriar a prioridade em tempo real
 
 // ros2 launch kobuki_auto_docking compact.launch.py 
 * Basicamente o codigo fica procurando a base do robo para carregar sua bateria, porem , ao executar em um terminal esse codigo algumas considerações devem ser consideradas;
-obs1: ao executar <ros2 launch kobuki_auto_docking compact.launch.py> o codigo tambem ligara o robo, então não deve estar aberto em outro terminal o codigo que liga o robo 
+obs1: dentro do yaml do pacote do kobuki_auto_docking foi alterado sinalizando a porta em device_port para "/dev/ttyUSB0" antes tava "/dev/kobuki"
+obs2: ao executar <ros2 launch kobuki_auto_docking compact.launch.py> o codigo tambem ligara o robo, então não deve estar aberto em outro terminal o codigo que liga o robo 
 (<ros2 launch kobuki_node kobuki_node-launch.py>)
-obs2: deve-se mandar um action para o robo enquanto o launch estiver rodando(por outro terminal)
+obs3: deve-se mandar um action para o robo enquanto o launch estiver rodando(por outro terminal)
 ex: ros2 action send_goal /auto_docking_action kobuki_ros_interfaces/action/AutoDocking '{}' - dessa forma, o robo ficara em circulos enquanto procura a base de carregamento 
 
 
