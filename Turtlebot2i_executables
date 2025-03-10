@@ -46,6 +46,27 @@ obs2: ao executar <ros2 launch kobuki_auto_docking compact.launch.py> o codigo t
 obs3: deve-se mandar um action para o robo enquanto o launch estiver rodando(por outro terminal)
 ex: ros2 action send_goal /auto_docking_action kobuki_ros_interfaces/action/AutoDocking '{}' - dessa forma, o robo ficara em circulos enquanto procura a base de carregamento 
 
+// ros2 launch kobuki_bumper2pc kobuki_bumper2pc-launch.py (opção que falhou)
+AVISO: tentei rodar esse codigo e da erro, fiz algumas mudanças pelo meu pc pra tentar resolver:
+.Mudança 1 : adicionei no cmake do kobuki_bumper e no kobuki_ros a linha :
+
+install(
+  DIRECTORY config/
+  DESTINATION share/${PROJECT_NAME}/config
+)
+
+.Mudança 2 : no launch do kobuki_bumper fiz as mudanças:
+share_dir = ament_index_python.packages.get_package_share_directory('kobuki_ros')
+e
+params_file = os.path.join(share_dir, 'kobuki_bumper2pc', 'config', 'kobuki_bumper2pc_params.yaml')
+
+obs: mesmo assim nao resolveu e vi q ia ter q mudar muito mais coisas e resolvi aguardar pra falar com orientador
+
+// ros2 run kobuki_bumper2pc kobuki_bumper2pc_node (opção que funcionou)
+*Converte eventos de sensores do robô Kobuki (bumpers(colisão) e sensores de cliff(tombo)) em uma nuvem de pontos (PointCloud2) e publica no tópico </pointcloud> , assim, ele não mede diretamente
+a distância de objetos (como um LiDAR faria), mas sim avisa quando o robô já encostou em algo ou está perto de cair. Esse aviso pode interromper a movimentação do robô quando ele encostar em algo(exemplo).
+obs1: <ros2 topic echo /sensors/core> da pra ver os bumpers e cliffs sendo alterados com o impacto ao robo 
+
 
 
 
