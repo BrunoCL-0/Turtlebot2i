@@ -67,6 +67,51 @@ obs: mesmo assim nao resolveu e vi q ia ter q mudar muito mais coisas e resolvi 
 a distância de objetos (como um LiDAR faria), mas sim avisa quando o robô já encostou em algo ou está perto de cair. Esse aviso pode interromper a movimentação do robô quando ele encostar em algo(exemplo).
 obs1: <ros2 topic echo /sensors/core> da pra ver os bumpers e cliffs sendo alterados com o impacto ao robo 
 
+// pasta kobuki_controller_tutorial
+* Esse codigo aparentemente eh um inicializador de classe que funciona teoricamente para funcionalidade de bump/blink (colisão/piscar), então ele provavelmente foi chamado em outro codigo e funciona
+de forma que o robo ao encostar em algo deve piscar um led
+obs1: nao tem executavel, tentei rodar a pasta direto com ros2 run e o kobuki_controller_tutorial nem eh executavel
+obs2: seu launch esta em .launch mas n eh um .py
+
+//ros2 launch  kobuki_description robot_description.launch.py 
+*publica TF + /robot_description e gera estados de juntas, dessa forma usando ros2 run rviz2 rviz2 -d ~/ros2_ws/src/kobuki_ros/kobuki_description/rviz/model.rviz o robo aparecera no rviz
+obs1: a pasta kobuki_description possui alem do modelo .rviz imagens do robo e alguns urdfs( que define por exemplo as dimensões do robo)
+
+
+// ros2 run kobuki_keyop kobuki_keyop_node
+*Basicamente ele:
+.Dabilita e desabilita os motores(e/d)
+.Aumenta e diminui as velocidades linear/angular(setas do teclado)
+.Reset nas velocidades(spacebar)
+obs1: não possui launch
+obs2: caso queira, execute <ros2 topic echo /cmd_vel> pra vizualizar as variações em tempo real 
+
+
+// pasta kobuki_node/kobuki_ros.cpp (não consegui executar)
+*Em teoria esse codigo vai: Criar a interface entre o robô e o ROS 2, permitindo que outros nós controlem e recebam informações do robô.
+.Lê sensores e envia os dados para o ROS.
+.Recebe comandos de movimento (cmd_vel) e envia para os motores.
+.Publica mensagens de odometria e estado da bateria.
+.Gerencia eventos do robô, como alertas de colisão ou bateria fraca.
+
+// pasta kobuki_node/odometry.cpp (não consegui executar)
+*Em teoria esse codigo vai: 
+Este código é responsável por calcular e publicar a odometria do robô, ou seja, sua posição e orientação ao longo do tempo, utilizando dados de movimento e sensores.
+Ele pode ser usado para rastrear a posição do robô em um ambiente e fornecer essas informações para outras partes do sistema (por exemplo, para navegação ou controle).
+
+// pasta kobuki_node/diagnostics.cpp (não consegui executar)
+*Em teoria esse codigo vai: gerar um diagnóstico detalhado com mensagens sobre o estado de vários sensores e sistemas.
+.Bateria: Nível de carga e estado de carregamento.
+.Sensores de obstáculos: Detecta colisões e quedas.
+.Motores: Verifica consumo de corrente e se estão ativados/desativados.
+.Sensores de entrada digital e analógica: Lê valores e os reporta.
+
+
+Rodar esses codigos abaixo e ver oq acontece !!!! :
+
+
+//ros2 launch kobuki_node kobuki_node-composed-launch.py
+//ros2 launch kobuki_node kobuki_node-launch.py
 
 
 
