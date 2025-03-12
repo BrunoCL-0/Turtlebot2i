@@ -106,13 +106,19 @@ Ele pode ser usado para rastrear a posição do robô em um ambiente e fornecer 
 .Motores: Verifica consumo de corrente e se estão ativados/desativados.
 .Sensores de entrada digital e analógica: Lê valores e os reporta.
 
+//ros2 launch kobuki_node kobuki_node-composed-launch.py e //ros2 launch kobuki_node kobuki_node-launch.py (consegue executar)
+*Basicamente ele vai rodar os 3 codigos citados anteriormente, onde:
+.diagnostics.cpp (diagnóstico do robô)
+.kobuki_ros.cpp (gerenciamento e comunicação ROS)
+.odometry.cpp (cálculo de odometria)
+obs1: no composed roda os nós ao mesmo tempo, no outro cada nó roda em um processo diferente
+obs2: o codigo ao rodar exibiu o relatorio porem somente em partes pois algumas informações n foram exibidas porconta de um problema na comunicação serial
+obs3: coloquei pra andar o robo em outro terminal e o erro da obs2 apareceu
+obs4: o topic /cmd_vel n ta aparecendo ao rodar o codigo, talvez pelo erro serial 
 
-Rodar esses codigos abaixo e ver oq acontece !!!! :
+//ros2 run kobuki_random_walker kobuki_random_walker_node --ros-args -p angular_velocity:=0.5
 
-
-//ros2 launch kobuki_node kobuki_node-composed-launch.py
-//ros2 launch kobuki_node kobuki_node-launch.py
-
+explicar aq
 
 
 
