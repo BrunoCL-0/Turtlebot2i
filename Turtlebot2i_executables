@@ -117,8 +117,12 @@ obs3: coloquei pra andar o robo em outro terminal e o erro da obs2 apareceu
 obs4: o topic /cmd_vel n ta aparecendo ao rodar o codigo, talvez pelo erro serial 
 
 //ros2 run kobuki_random_walker kobuki_random_walker_node --ros-args -p angular_velocity:=0.5
-
-explicar aq
+*O robo realiza movimento em linha reta, se encostar em algo gira e anda reto novamente, dependendo da situação liga LEDs especificos 
+.Robô andando normalmente	LED1 (verde) aceso
+.Robô levantado (Lift Sensor)	LED1 (vermelho) e LED2 (vermelho) acesos
+.Robô perto de uma borda (Cliff Sensor)	LED1 (vermelho) e LED2 (amarelo) acesos
+.Robô colidiu com um obstáculo (Bumper Sensor)	LED1 (laranja) aceso
+obs1: não consegui rodar os launchs e eles estão em .launch sem .py
 
 
 
