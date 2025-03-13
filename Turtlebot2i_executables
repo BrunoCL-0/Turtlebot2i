@@ -125,4 +125,11 @@ obs4: o topic /cmd_vel n ta aparecendo ao rodar o codigo, talvez pelo erro seria
 obs1: não consegui rodar os launchs e eles estão em .launch sem .py
 
 
+//ros2 launch kobuki_safety_controller safety_controller-launch.py 
+*Em teoria o robo vai identificar quando bater em algo e andar pra traz dependendo do sensor ativado(nesse caso o da frente), porem ele apenas anda reto
+obs1: mudei o launch na parte que tem escrita node_executable deixei apenas node (codigo antes n tava rodando e passou a rodar) - dentro da nuc do kobuki
+obs2: execute junto : <ros2 topic pub /commands/velocity geometry_msgs/msg/Twist "{linear: {x: 0.2}, angular: {z: 0.0}}" --rate 10> pois assim ele vai movimentar o robo
+
+
+
 
