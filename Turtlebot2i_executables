@@ -130,6 +130,10 @@ obs1: não consegui rodar os launchs e eles estão em .launch sem .py
 obs1: mudei o launch na parte que tem escrita node_executable deixei apenas node (codigo antes n tava rodando e passou a rodar) - dentro da nuc do kobuki
 obs2: execute junto : <ros2 topic pub /commands/velocity geometry_msgs/msg/Twist "{linear: {x: 0.2}, angular: {z: 0.0}}" --rate 10> pois assim ele vai movimentar o robo
 
-
+// pasta kobuki_testsuite
+* essa pasta ta em ros1 e tem 2 folders dentro dela(scripts e src), ambos possuem diversos codigos em .py em ros1 q executam varias funções diferentes
+obs1: n consegui executar porconta de estar em ros1 e teria q mudar muita coisa na nuc
+obs2: tem codigos interessantes q podem ser usados pra fazer algo especifico 
+obs3: esses codigos importam outros codigos, geralmente oq esta no src eh importado pelo scripts pra executar algo
 
 
