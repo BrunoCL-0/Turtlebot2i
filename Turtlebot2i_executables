@@ -137,3 +137,22 @@ obs2: tem codigos interessantes q podem ser usados pra fazer algo especifico
 obs3: esses codigos importam outros codigos, geralmente oq esta no src eh importado pelo scripts pra executar algo
 
 
+                        *MEXENDO NO TURTLEBOT2I*
+Criei uma pasta na nuc chamada kobuki_test e nela tem duas novas pastas:
+
+----- kobuki_rotate_test - <ros2 run kobuki_rotate_test rotate> 
+*Basicamente nessa pasta criei um executavel em cpp que o robo anda pra frente gira e anda pra tras em loop
+obs1: ele ta dando umas travadinhas no movimento linear
+
+----- kobuki_button_test -  <ros2 run kobuki_button_test button_control_node>
+*A intenção desse executavel ta sendo ao clicar no botão do robo ele realizar determinada função, nesse codigo criei com publishers e subscribers a logica na qual ao clicar:
+.B0 - gira pra esquerda
+.B2 - gira pra direita
+.B1 - para o robó
+
+
+
+
+
+LEMBRA DE TIRAR DA TOMADA O CARREGADOR
+
