@@ -138,7 +138,7 @@ obs3: esses codigos importam outros codigos, geralmente oq esta no src eh import
 
 
                         *MEXENDO NO TURTLEBOT2I*
-Criei uma pasta na nuc chamada kobuki_test e nela tem duas novas pastas:
+Criei uma pasta na nuc chamada kobuki_test e nela tem novas pastas:
 
 ----- kobuki_rotate_test - <ros2 run kobuki_rotate_test rotate> 
 *Basicamente nessa pasta criei um executavel em cpp que o robo anda pra frente gira e anda pra tras em loop
@@ -150,8 +150,10 @@ obs1: ele ta dando umas travadinhas no movimento linear
 .B2 - gira pra direita
 .B1 - para o robó
 
-
-
+------ ros2 run kobuki_battery_test kobuki_battery_test 
+*Basicamente ao executar esse codigo, o robo vai identificar o nivel da bateria, se estiver abaixo ou igual a 20%(1 traço) ele vai começar a piscar os dois leds vermelhos e apos um tempo ira começar
+a emitir um som , realizando esses dois publishers ate apertar cntrl C e parar
+obs1: Caso a bateria esteja carregada, vai printar uma mensagem de que tem bateria suficiente no turtlebot2i
 
 
 LEMBRA DE TIRAR DA TOMADA O CARREGADOR
