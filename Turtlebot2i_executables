@@ -155,6 +155,20 @@ obs1: ele ta dando umas travadinhas no movimento linear
 a emitir um som , realizando esses dois publishers ate apertar cntrl C e parar
 obs1: Caso a bateria esteja carregada, vai printar uma mensagem de que tem bateria suficiente no turtlebot2i
 
+------
+
+Tentei copiar a pasta que tem o comando ros2 launch kobuki_node kobuki_node-launch.py pra poder fazer possiveis modificações no codigo, porem, deu muitos erros e dei rm -rf e apaguei, ao 
+compilar novos erros foram gerados e nao consegui nem executa o kobuki_node, então resolvi o problema executando:
+rm -rf build install log
+colcon build --symlink-install   (agr foi)
+
+
+Coisas a fazer/duvidas
+.Criar a logica na qual ao rodar o comando que conecta o robo, ele ao mesmo tempo puxa meu codigo da bateria e do joystick
+.Criar a logica na qual o comando que conecta o robo eh ativado ao apertar o botão de ligar o robo
+ta certo essa logica?
+
+
 
 LEMBRA DE TIRAR DA TOMADA O CARREGADOR
 
