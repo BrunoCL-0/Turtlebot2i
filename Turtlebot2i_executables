@@ -12,7 +12,10 @@
 .Arco pra tras direita(.)
 
 // ros2 launch teleop_twist_joy teleop-launch.py config_filepath:='/home/brunocunhalima/pdp.config.yaml' joy_vel:='commands/velocity'
-*Conecta o joystick no turtlebot para movimenta-lo. Obs: Deve conectar pelo terminal do qual o computador esteja conectado ao controle // Obs2: o pdp.config.yaml foi salvo no local sinalizado "/home/brunocunhalima/", podendeo assim variar a situação
+*Conecta o joystick no turtlebot para movimenta-lo. Obs: Deve conectar pelo terminal do qual o computador esteja conectado ao controle // Obs2: o pdp.config.yaml foi salvo no local sinalizado 
+"/home/brunocunhalima/", podendeo assim variar a situação, na nuc foi : ros2 launch teleop_twist_joy teleop-launch.py config_filepath
+='/home/turtlebot/ros2_ws/src/kobuki_test/kobuki_controller/pdp.config.yaml' joy_vel:='commands/velocity'
+
 .Codigo dentro do .yaml:
 
 teleop_twist_joy_node:
@@ -150,25 +153,24 @@ obs1: ele ta dando umas travadinhas no movimento linear
 .B2 - gira pra direita
 .B1 - para o robó
 
------- ros2 run kobuki_battery_test kobuki_battery_test 
+------ kobuki_baterry_test - <ros2 run kobuki_battery_test kobuki_battery_test> 
 *Basicamente ao executar esse codigo, o robo vai identificar o nivel da bateria, se estiver abaixo ou igual a 20%(1 traço) ele vai começar a piscar os dois leds vermelhos e apos um tempo ira começar
 a emitir um som , realizando esses dois publishers ate apertar cntrl C e parar
 obs1: Caso a bateria esteja carregada, vai printar uma mensagem de que tem bateria suficiente no turtlebot2i
 
-------
-
-Tentei copiar a pasta que tem o comando ros2 launch kobuki_node kobuki_node-launch.py pra poder fazer possiveis modificações no codigo, porem, deu muitos erros e dei rm -rf e apaguei, ao 
-compilar novos erros foram gerados e nao consegui nem executa o kobuki_node, então resolvi o problema executando:
-rm -rf build install log
-colcon build --symlink-install   (agr foi)
-
+------ kobuki_controller - <ros2 launch kobuki_controller kobuki_control_launch.py> 
+*Esse comando executa 3 codigos juntos mencionados anteriormente:
+.O que conecta o robo a base kobuki
+.Da bateria
+.Do joystick
 
 Coisas a fazer/duvidas
-.Criar a logica na qual ao rodar o comando que conecta o robo, ele ao mesmo tempo puxa meu codigo da bateria e do joystick
+.Criar a logica na qual ao rodar o comando que conecta o robo, ele ao mesmo tempo puxa meu codigo da bateria e do joystick -feito
 .Criar a logica na qual o comando que conecta o robo eh ativado ao apertar o botão de ligar o robo
-ta certo essa logica?
+.Aumentar o som de aviso da bateria?
 
 
+ 
 
 LEMBRA DE TIRAR DA TOMADA O CARREGADOR
 
