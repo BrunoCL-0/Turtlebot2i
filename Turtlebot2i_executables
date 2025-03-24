@@ -164,10 +164,19 @@ obs1: Caso a bateria esteja carregada, vai printar uma mensagem de que tem bater
 .Da bateria
 .Do joystick
 
+------ crontab -e
+* é o comando usado no Linux para editar a lista de tarefas automáticas que o sistema vai executar em determinados horários ou eventos
+obs1: dentro do crontab botar <@reboot bash -c "source /opt/ros/humble/setup.bash && source /home/turtlebot/ros2_ws/install/setup.bash && ros2 launch seu_pacote seu_arquivo.launch.py">
+dessa forma, o robo rodara seu launch criado antes conectando o robo a todos os nodes e launchs declarados anteriormente 
+obs2: <cat /home/turtlebot/roslog.txt> -  mostra o que foi impresso no terminal durante o boot
+
 Coisas a fazer/duvidas
 .Criar a logica na qual ao rodar o comando que conecta o robo, ele ao mesmo tempo puxa meu codigo da bateria e do joystick -feito
-.Criar a logica na qual o comando que conecta o robo eh ativado ao apertar o botão de ligar o robo
+.Criar a logica na qual o comando que conecta o robo eh ativado ao apertar o botão de ligar o robo -feito
 .Aumentar o som de aviso da bateria?
+.Resolver o movimento agressivo do robo com o analogico 
+.Botar o controle pra so ser utilizado quando apertar um botao
+.Adicionar movimento aleatorio do botao?
 
 
  
