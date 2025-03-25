@@ -13,8 +13,8 @@
 
 // ros2 launch teleop_twist_joy teleop-launch.py config_filepath:='/home/brunocunhalima/pdp.config.yaml' joy_vel:='commands/velocity'
 *Conecta o joystick no turtlebot para movimenta-lo. Obs: Deve conectar pelo terminal do qual o computador esteja conectado ao controle // Obs2: o pdp.config.yaml foi salvo no local sinalizado 
-"/home/brunocunhalima/", podendeo assim variar a situação, na nuc foi : ros2 launch teleop_twist_joy teleop-launch.py config_filepath
-='/home/turtlebot/ros2_ws/src/kobuki_test/kobuki_controller/pdp.config.yaml' joy_vel:='commands/velocity'
+"/home/brunocunhalima/", podendeo assim variar a situação, na nuc foi : ros2 launch teleop_twist_joy teleop-launch.py config_filepath:="/home/turtlebot/ros2_ws/src/kobuki_test/kobuki_controller/pdp.config.yaml" joy_vel:="/commands/velocity"
+
 
 .Codigo dentro do .yaml:
 
@@ -171,12 +171,10 @@ dessa forma, o robo rodara seu launch criado antes conectando o robo a todos os 
 obs2: <cat /home/turtlebot/roslog.txt> -  mostra o que foi impresso no terminal durante o boot
 
 Coisas a fazer/duvidas
-.Criar a logica na qual ao rodar o comando que conecta o robo, ele ao mesmo tempo puxa meu codigo da bateria e do joystick -feito
-.Criar a logica na qual o comando que conecta o robo eh ativado ao apertar o botão de ligar o robo -feito
-.Aumentar o som de aviso da bateria?
+.Resolver a questao de n conseguir vizualizar os topics pelo crontab - usar sturtup aplication
+.Fazer codigo la q isola o joy e o movimento aleatorio por botoes - resolver um sobrepondo o outro (falar com victor)
 .Resolver o movimento agressivo do robo com o analogico 
-.Botar o controle pra so ser utilizado quando apertar um botao
-.Adicionar movimento aleatorio do botao?
+.Aumentar o som de aviso da bateria?
 
 
  
