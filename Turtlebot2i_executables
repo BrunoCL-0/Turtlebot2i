@@ -171,13 +171,18 @@ dessa forma, o robo rodara seu launch criado antes conectando o robo a todos os 
 obs2: <cat /home/turtlebot/roslog.txt> -  mostra o que foi impresso no terminal durante o boot
 
 Coisas a fazer/duvidas
-.Resolver a questao de n conseguir vizualizar os topics pelo crontab - usar sturtup aplication
 .Fazer codigo la q isola o joy e o movimento aleatorio por botoes - resolver um sobrepondo o outro (falar com victor)
-.Resolver o movimento agressivo do robo com o analogico 
+.Ajeitar o launch com esse codigo
+.Resolver a questao de n conseguir vizualizar os topics pelo crontab - usar sturtup aplication
+. Adicionar o pacote de controle de velocidade do robo  
 .Aumentar o som de aviso da bateria?
+.Atualizar o git pro ngc do rotate
+.Passar ao src da nuc pra victor(passar pro meu pc, zipar e mandar pra ele) 
+
+mode manager 
 
 
- 
+
 
 LEMBRA DE TIRAR DA TOMADA O CARREGADOR
 
