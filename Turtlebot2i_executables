@@ -143,10 +143,6 @@ obs3: esses codigos importam outros codigos, geralmente oq esta no src eh import
                         *MEXENDO NO TURTLEBOT2I*
 Criei uma pasta na nuc chamada kobuki_test e nela tem novas pastas:
 
------ kobuki_rotate_test - <ros2 run kobuki_rotate_test rotate> 
-*Basicamente nessa pasta criei um executavel em cpp que o robo anda pra frente gira e anda pra tras em loop
-obs1: ele ta dando umas travadinhas no movimento linear
-
 ----- kobuki_button_test -  <ros2 run kobuki_button_test button_control_node>
 *A intenção desse executavel ta sendo ao clicar no botão do robo ele realizar determinada função, nesse codigo criei com publishers e subscribers a logica na qual ao clicar:
 .B0 - gira pra esquerda
@@ -159,28 +155,57 @@ a emitir um som , realizando esses dois publishers ate apertar cntrl C e parar
 obs1: Caso a bateria esteja carregada, vai printar uma mensagem de que tem bateria suficiente no turtlebot2i
 
 ------ kobuki_controller - <ros2 launch kobuki_controller kobuki_control_launch.py> 
-*Esse comando executa 3 codigos juntos mencionados anteriormente:
+*Esse comando executa varios codigos juntos:
 .O que conecta o robo a base kobuki
 .Da bateria
 .Do joystick
+.O node_manager.cpp , esse codigo basicamente esta dentro do kobuki_controller em seu src, nesse codigo ele:
+ - Ao apertar B0 conecta o controle joystick no robo
+ - Ao apertar B1 realiza um movimento especifico pra demonstração que esta dentro desse cpp 
+ - Quando apertar B0 ou B1 pela segunda vez ou vai parar de executar o movimento ou executar a outra função imediatamente, depende da situação em progresso
+obs1: esse cpp pode ser executado com run tbm , isolado, porem tem que rodar o kobuki_node em outro terminal também
 
------- crontab -e
-* é o comando usado no Linux para editar a lista de tarefas automáticas que o sistema vai executar em determinados horários ou eventos
-obs1: dentro do crontab botar <@reboot bash -c "source /opt/ros/humble/setup.bash && source /home/turtlebot/ros2_ws/install/setup.bash && ros2 launch seu_pacote seu_arquivo.launch.py">
-dessa forma, o robo rodara seu launch criado antes conectando o robo a todos os nodes e launchs declarados anteriormente 
-obs2: <cat /home/turtlebot/roslog.txt> -  mostra o que foi impresso no terminal durante o boot
+------ sturtup aplication
+* Aqui eh a forma utilizada pra no momento que o botão de ligar do robo for acionado ele chamar o launch kobuki_controller
+.Etapa 1: Dentro do startup aplication do seu pc, clicar em add e nele por um nome e em command por o encaminhamento ao .sh
+- Dentro do .sh:
+
+#!/bin/bash
+source /opt/ros/humble/setup.bash
+source /home/turtlebot/ros2_ws/install/setup.bash
+ros2 launch kobuki_controller kobuki_control_launch.py
+
+.Etapa 2: Criar um service - sudo nano /etc/systemd/system/start_kobuki.service
+- Dentro do .service:
+[Unit]
+Description=Start Kobuki on boot
+After=network.target
+
+[Service]
+Type=simple
+User=turtlebot
+ExecStart=/bin/bash /home/turtlebot/start_kobuki.sh
+Restart=always
+Environment="DISPLAY=:0"
+Environment="XDG_RUNTIME_DIR=/run/user/1000"
+
+[Install]
+WantedBy=multi-user.target
+
+obs1: execute para funcionar: 
+sudo systemctl daemon-reload
+sudo systemctl enable start_kobuki.service
+sudo nano /etc/systemd/system/start_kobuki.service
+sudo nano /etc/systemd/system/start_kobuki.service
+chmod +x /home/turtlebot/start_kobuki.sh
+
+
 
 Coisas a fazer/duvidas
-.Fazer codigo la q isola o joy e o movimento aleatorio por botoes - resolver um sobrepondo o outro (falar com victor)
-.Ajeitar o launch com esse codigo
-.Resolver a questao de n conseguir vizualizar os topics pelo crontab - usar sturtup aplication
-. Adicionar o pacote de controle de velocidade do robo  
+.Movimento especifico
+.Adicionar o pacote de controle de velocidade do robo  
 .Aumentar o som de aviso da bateria?
-.Atualizar o git pro ngc do rotate
-.Passar ao src da nuc pra victor(passar pro meu pc, zipar e mandar pra ele) 
-
-mode manager 
-
+.Passar ao src da nuc pra victor(passar pro meu pc, zipar e mandar pra ele)  
 
 
 
