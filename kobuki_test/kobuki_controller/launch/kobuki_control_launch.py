@@ -19,7 +19,7 @@ def generate_launch_description():
         ]),
         # Passando parâmetros específicos para o launch do teleop
         launch_arguments={
-            "config_filepath": "/home/turtlebot/ros2_ws/src/kobuki_test/kobuki_controller/pdp.config.yaml",
+            "config_filepath": "/home/turtlebot/ros2_ws/src/Turtlebot2i/kobuki_test/kobuki_controller/pdp.config.yaml",
             "joy_vel": "/joy/velocity"
         }.items()
     )
