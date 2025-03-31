@@ -203,7 +203,7 @@ chmod +x /home/turtlebot/start_kobuki.sh
 
 Coisas a fazer/duvidas
 .Começar a mexer na camera
-.Fazer um ssh no github igual fez com a nuc soq pro meu pc!
+.Fazer um ssh no github igual fez com a nuc soq pro meu pc!                                              -COMO FAZ PRA ESSAS MODIFICAÇÕES APARECEREM NO VS CODE DO KOBUKI?
 .Adicionar o pacote de controle de velocidade do robo? pra depois fazer algum outro movimento?
 .Aumentar o som de aviso da bateria?
 
