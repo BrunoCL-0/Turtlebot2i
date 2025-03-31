@@ -202,9 +202,9 @@ chmod +x /home/turtlebot/start_kobuki.sh
 
 
 Coisas a fazer/duvidas
-.Por a camera?
-.Movimento especifico?
-.Adicionar o pacote de controle de velocidade do robo?  
+.Começar a mexer na camera
+.Fazer um ssh no github igual fez com a nuc soq pro meu pc!
+.Adicionar o pacote de controle de velocidade do robo? pra depois fazer algum outro movimento?
 .Aumentar o som de aviso da bateria?
 
 
