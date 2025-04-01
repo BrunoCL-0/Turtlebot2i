@@ -199,6 +199,10 @@ sudo nano /etc/systemd/system/start_kobuki.service
 sudo nano /etc/systemd/system/start_kobuki.service
 chmod +x /home/turtlebot/start_kobuki.sh
 
+--- ros2_astra_camera
+*Seguindo o passo a passo do - https://github.com/orbbec/ros2_astra_camera - lembrando de dar git clone após criar o ros2 workspace 
+Obs1: ros2 launch astra_camera astra.launch.xml - eh o launch da camera 
+obs2: utilizando rviz2 em outro terminal tem acesso aos topics e etc da camera 
 
 
 Coisas a fazer/duvidas
