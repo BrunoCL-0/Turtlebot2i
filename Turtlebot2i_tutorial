@@ -4,3 +4,5 @@
 2- Entre no terminal do seu computador e conecte ao id do turtlebot com ssh usuario@id, em nosso caso ssh turtlebot@192.168.42.249 (obs: ambos os consoles devem estar conectados na mesma rede)
 3- Inicie o kobuki com ros2 launch kobuki_node kobuki_node-launch.py
 4- Abra outro terminal com turtlebot e execute o comando que preferir, aqui voce começa a mexer no robo, lembre de manter o terminal do kobuki em funcionamento 
+
+PRA CRIAR SSH GIT-CONSOLE: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
